@@ -4,7 +4,7 @@ import App from './components/app/app';
 
 
 const offersValue = {
-  value: [1, 2, 3, 4, 5, 6],
+  value: [1, 2, 3, 4, 5],
 };
 
 ReactDOM.render(
