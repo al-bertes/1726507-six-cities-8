@@ -1,4 +1,10 @@
-function Property(): JSX.Element {
+import { OffersType} from '../../types/offers-type';
+
+type RoomTypes = {
+  offer: OffersType,
+}
+function Property({offer}: RoomTypes): JSX.Element {
+
   return (
     <>
       <div style={{display: 'none'}}>

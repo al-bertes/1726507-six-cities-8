@@ -1,3 +1,4 @@
+import { OffersType } from '../../types/offers-type';
 import { AppRoute, AuthorizationStatus } from '../../const';
 import Favorites from '../favorites/favorites';
 // import FavoritesEmpty from '../favorites/favorites-empty';
@@ -9,29 +10,30 @@ import {Switch, Route, BrowserRouter} from 'react-router-dom';
 import ManePage from '../main/main-page';
 import PrivateRoute from '../private-route/private-route';
 
+
 type AppProps = {
-  valueOffers: number[]
+  offer: OffersType;
 }
 
-function App({valueOffers}: AppProps): JSX.Element {
+function App({offer}: AppProps): JSX.Element {
   return  (
 
     <BrowserRouter>
       <Switch>
         <Route exact path={AppRoute.Main}>
-          <ManePage valueOffers={valueOffers} />
+          <ManePage offer={offer}/>
         </Route>
         <Route path={AppRoute.Login} exact>
           <Login/>
         </Route>
         <Route path={AppRoute.Room} exact>
-          <Room/>
+          <Room offer={offer}/>
         </Route>
         <PrivateRoute
           exact
           path={AppRoute.Favorites}
           render={() => <Favorites />}
-          authorizationStatus={AuthorizationStatus.NoAuth}
+          authorizationStatus={AuthorizationStatus.Auth}
         >
         </PrivateRoute>
         <Route>

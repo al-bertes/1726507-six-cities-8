@@ -1,13 +1,14 @@
+import { OffersType } from '../../types/offers-type';
 import { Link } from 'react-router-dom';
 import { AppRoute } from '../../const';
-import Offers from '../offers/offers';
+import OfferList from '../offers/offers-list';
 
 
 type MainPageProps = {
-  valueOffers: number[]
+  offer: OffersType,
 }
 
-function ManePage( {valueOffers}: MainPageProps): JSX.Element {
+function ManePage( {offer}: MainPageProps): JSX.Element {
   return (
     <div className="page page--gray page--main">
       <header className="header">
@@ -96,9 +97,7 @@ function ManePage( {valueOffers}: MainPageProps): JSX.Element {
                   <li className="places__option" tabIndex={0}>Top rated first</li>
                 </ul>
               </form>
-              <div className="cities__places-list places__list tabs__content">
-                {valueOffers.map((item) => <Offers key={item} />)}
-              </div>
+              <OfferList offer={offer}/>),
             </section>
             <div className="cities__right-section">
               <section className="cities__map map"></section>

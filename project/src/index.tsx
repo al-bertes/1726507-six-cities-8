@@ -1,14 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/app/app';
+import { offer } from './mocks/offers';
 
-
-const offersValue = {
-  value: [1, 2, 3, 4, 5],
-};
 
 ReactDOM.render(
   <React.StrictMode>
-    <App valueOffers={offersValue.value}/>
+    <App
+      offer={offer}
+    />
   </React.StrictMode>,
   document.getElementById('root'));
