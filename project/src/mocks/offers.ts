@@ -23,7 +23,7 @@ export const offer: OffersType = [
     },
     id: 1,
     images: [`${IMG_URL}?rnd=${Math.random()}`, `${IMG_URL}?rnd=${Math.random()}`],
-    isFavorite: false,
+    isFavorite: true,
     isPremium: false,
     location: {
       latitude: 52.35514938496378,
@@ -33,7 +33,7 @@ export const offer: OffersType = [
     maxAdults: 4,
     previewImage: `${IMG_URL}?rnd=${Math.random()}`,
     price: 120,
-    rating: '80',
+    rating: 4.5,
     title: 'Beautiful & luxurious studio at great location',
     type: 'apartment',
   },{
@@ -56,7 +56,7 @@ export const offer: OffersType = [
     },
     id: 2,
     images: [`${IMG_URL}?rnd=${Math.random()}`, `${IMG_URL}?rnd=${Math.random()}`],
-    isFavorite: false,
+    isFavorite: true,
     isPremium: true,
     location: {
       latitude: 52.35514938496378,
@@ -66,7 +66,7 @@ export const offer: OffersType = [
     maxAdults: 4,
     previewImage: `${IMG_URL}?rnd=${Math.random()}`,
     price: 565,
-    rating: '100',
+    rating: 5,
     title: 'great location',
     type: 'apartment',
   },{
@@ -99,7 +99,7 @@ export const offer: OffersType = [
     maxAdults: 4,
     previewImage: `${IMG_URL}?rnd=${Math.random()}`,
     price: 344,
-    rating: '60',
+    rating: 3,
     title: 'luxurious studio at great location',
     type: 'apartment',
   },{
@@ -110,7 +110,7 @@ export const offer: OffersType = [
         longitude: 4.895168,
         zoom: 10,
       },
-      name: 'Amsterdam',
+      name: 'asdfasdf',
     },
     description: 'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.',
     goods: ['Heating', 'Kitchen', 'Cable TV', 'Washing machine', 'Coffee machine', 'Dishwasher'],
@@ -122,7 +122,7 @@ export const offer: OffersType = [
     },
     id: 4,
     images: [`${IMG_URL}?rnd=${Math.random()}`, `${IMG_URL}?rnd=${Math.random()}`],
-    isFavorite: false,
+    isFavorite: true,
     isPremium: false,
     location: {
       latitude: 52.35514938496378,
@@ -132,7 +132,7 @@ export const offer: OffersType = [
     maxAdults: 4,
     previewImage: `${IMG_URL}?rnd=${Math.random()}`,
     price: 596,
-    rating: '40',
+    rating: 2,
     title: '& luxurious studio at great location',
     type: 'apartment',
   },

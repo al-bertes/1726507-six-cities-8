@@ -1,29 +1,24 @@
-import { Link } from 'react-router-dom';
+import { generatePath, Link } from 'react-router-dom';
 import { AppRoute } from '../../const';
 import { useState } from 'react';
 
 
-// import { OfferType } from '../../types/offers-type';
+import { OfferType } from '../../types/offers-type';
 
 type OfferCardType = {
-  price: number,
-  rating: string,
-  title: string
-  previewImage: string,
-  isPremium: boolean,
-  type: string,
-  id: number
+  offers: OfferType,
 }
-function OfferCard({
+function OfferCard({offers: {
   price,
   rating,
   title,
   previewImage,
   isPremium,
   type,
-  id}: OfferCardType): JSX.Element {
+  id,
+}}: OfferCardType): JSX.Element {
 
-  const [offerId, setId] = useState(0);
+  const [currentId, setId] = useState(0);
 
   return (
     <article className="cities__place-card place-card"
@@ -35,7 +30,7 @@ function OfferCard({
           <span>Premium</span>
         </div> : ''}
       <div className="cities__image-wrapper place-card__image-wrapper">
-        <Link to={AppRoute.Room + offerId}>
+        <Link to={generatePath(AppRoute.Room,currentId)}>
           <img className="place-card__image" src={previewImage} width="260" height="200" alt="Place image"/>
         </Link>
       </div>
@@ -54,12 +49,12 @@ function OfferCard({
         </div>
         <div className="place-card__rating rating">
           <div className="place-card__stars rating__stars">
-            <span style={{width: `${rating}%`}}></span>
+            <span style={{width: `${rating/5 * 100}%`}}></span>
             <span className="visually-hidden">Rating</span>
           </div>
         </div>
         <h2 className="place-card__name">
-          <a href="#">{title}</a>
+          <Link to={AppRoute.Room}>{title}</Link>
         </h2>
         <p className="place-card__type">{type}</p>
       </div>

@@ -2,24 +2,18 @@ import { OffersType } from '../../types/offers-type';
 import OfferCard from './offer-card';
 
 type OfferListType = {
-  offer: OffersType,
+  offers: OffersType,
 }
 
-function OfferList({offer}: OfferListType): JSX.Element {
+function OfferList({offers}: OfferListType): JSX.Element {
 
   return (
     <div className="cities__places-list places__list tabs__content">
-      {offer.map(({ price, rating, title, previewImage, isPremium, type, id}) =>
+      {offers.map((offer) =>
         (
           <OfferCard
-            key={id}
-            price={price}
-            rating={rating}
-            title={title}
-            previewImage={previewImage}
-            isPremium={isPremium}
-            type={type}
-            id={id}
+            key={offer.id}
+            offers={offer}
           />
         ),
       )}

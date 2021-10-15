@@ -30,7 +30,7 @@ export type OfferType =  {
   maxAdults: number,
   previewImage: string,
   price: number,
-  rating: string,
+  rating: number,
   title: string,
   type: string
 };
