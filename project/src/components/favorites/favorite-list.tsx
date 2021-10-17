@@ -9,7 +9,7 @@ type FavoriteLocationTypes = {
 }
 
 function FavoriteList({offers, city}: FavoriteLocationTypes): JSX.Element {
-  const favoriteOffers = offers.filter((offer) => offer.city.name === city);
+  const favoriteOffers = offers.filter((item) => item.city.name === city);
   return (
 
     <li className="favorites__locations-items">

@@ -34,5 +34,3 @@ export type OfferType =  {
   title: string,
   type: string
 };
-
-export type OffersType = OfferType[];

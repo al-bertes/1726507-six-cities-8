@@ -1,13 +1,13 @@
-import { OffersType } from '../../types/offers-type';
+import { OfferType } from '../../types/offers-type';
 import Header from '../header/header';
 import OfferList from '../offers/offers-list';
 
 
 type MainPageProps = {
-  offer: OffersType,
+  offers: OfferType[],
 }
 
-function ManePage( {offer}: MainPageProps): JSX.Element {
+function ManePage( {offers}: MainPageProps): JSX.Element {
   return (
     <div className="page page--gray page--main">
       <Header/>
@@ -69,7 +69,7 @@ function ManePage( {offer}: MainPageProps): JSX.Element {
                   <li className="places__option" tabIndex={0}>Top rated first</li>
                 </ul>
               </form>
-              <OfferList offers={offer}/>),
+              <OfferList offers={offers}/>),
             </section>
             <div className="cities__right-section">
               <section className="cities__map map"></section>

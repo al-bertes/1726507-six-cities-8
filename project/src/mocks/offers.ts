@@ -1,8 +1,8 @@
-import { OffersType } from '../types/offers-type';
+import { OfferType } from '../types/offers-type';
 
 const IMG_URL = 'https://i.pravatar.cc/128';
 
-export const offer: OffersType = [
+export const offer: OfferType[] = [
   {
     bedrooms: 3,
     city: {
@@ -14,7 +14,7 @@ export const offer: OffersType = [
       name: 'Amsterdam',
     },
     description: 'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.',
-    goods: ['Heating', 'Kitchen', 'Cable TV', 'Washing machine', 'Coffee machine', 'Dishwasher'],
+    goods: ['Heating', 'Kitchen', 'Cable TV', 'Washing machine', 'Coffee machine', 'Dishwasher', 'Pipetkf'],
     host: {
       avatarUrl: `${IMG_URL}?rnd=${Math.random()}`,
       id: 3,
@@ -47,7 +47,7 @@ export const offer: OffersType = [
       name: 'Amsterdam',
     },
     description: 'Уютное гнездышко',
-    goods: ['Kitchen', 'Cable TV', 'Washing machine', 'Coffee machine', 'Dishwasher'],
+    goods: ['Kitchen', 'Cable TV', 'Washing machine', 'Coffee machine', 'Dishwasher', 'Вставная челюсть'],
     host: {
       avatarUrl: `${IMG_URL}?rnd=${Math.random()}`,
       id: 2,

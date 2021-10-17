@@ -1,12 +1,11 @@
-import { generatePath, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { AppRoute } from '../../const';
-import { useState } from 'react';
-
-
 import { OfferType } from '../../types/offers-type';
 
 type OfferCardType = {
   offers: OfferType,
+  onMouseEnterCard?: (id: number) => void;
+  onMouseLeaveCard?: () => void;
 }
 function OfferCard({offers: {
   price,
@@ -16,21 +15,29 @@ function OfferCard({offers: {
   isPremium,
   type,
   id,
-}}: OfferCardType): JSX.Element {
+},onMouseEnterCard, onMouseLeaveCard}: OfferCardType): JSX.Element {
+  const mouseEnterHandler = () => {
+    if (onMouseEnterCard) {
+      onMouseEnterCard(id);
+    }
+  };
 
-  const [currentId, setId] = useState(0);
+  const mouseLeaveHandler = () => {
+    if (onMouseLeaveCard) {
+      onMouseLeaveCard();
+    }
+  };
 
   return (
     <article className="cities__place-card place-card"
-      onMouseEnter={() => setId(id)}
-      onMouseLeave={() => setId(0)}
+      onMouseEnter={mouseEnterHandler} onMouseLeave={mouseLeaveHandler}
     >
       {(isPremium) ?
         <div className="place-card__mark">
           <span>Premium</span>
         </div> : ''}
       <div className="cities__image-wrapper place-card__image-wrapper">
-        <Link to={generatePath(AppRoute.Room,currentId)}>
+        <Link to={AppRoute.Room}>
           <img className="place-card__image" src={previewImage} width="260" height="200" alt="Place image"/>
         </Link>
       </div>

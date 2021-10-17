@@ -1,11 +1,13 @@
-import { OffersType } from '../../types/offers-type';
+import { OfferType } from '../../types/offers-type';
 import OfferCard from './offer-card';
 
 type OfferListType = {
-  offers: OffersType,
+  offers: OfferType[],
+  onMouseEnterCard?: (id: number) => void,
+  onMouseLeaveCard?: () => void,
 }
 
-function OfferList({offers}: OfferListType): JSX.Element {
+function OfferList({offers, onMouseEnterCard, onMouseLeaveCard}: OfferListType): JSX.Element {
 
   return (
     <div className="cities__places-list places__list tabs__content">
@@ -14,6 +16,8 @@ function OfferList({offers}: OfferListType): JSX.Element {
           <OfferCard
             key={offer.id}
             offers={offer}
+            onMouseEnterCard={onMouseEnterCard}
+            onMouseLeaveCard={onMouseLeaveCard}
           />
         ),
       )}

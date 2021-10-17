@@ -1,4 +1,4 @@
-import { OffersType } from '../../types/offers-type';
+import { OfferType } from '../../types/offers-type';
 import { AppRoute, AuthorizationStatus } from '../../const';
 import Favorites from '../favorites/favorites';
 // import FavoritesEmpty from '../favorites/favorites-empty';
@@ -12,30 +12,30 @@ import PrivateRoute from '../private-route/private-route';
 
 
 type AppProps = {
-  offer: OffersType;
+  offers: OfferType[];
 }
 
-function App({offer}: AppProps): JSX.Element {
+function App({offers}: AppProps): JSX.Element {
   return  (
 
     <BrowserRouter>
       <Switch>
         <Route exact path={AppRoute.Main}>
-          <ManePage offer={offer}/>
+          <ManePage offers={offers}/>
         </Route>
         <Route path={AppRoute.Login} exact>
           <Login/>
         </Route>
-        <Route path={AppRoute.Room} exact>
-          <Room offer={offer}/>
-        </Route>
         <PrivateRoute
           exact
           path={AppRoute.Favorites}
-          render={() => <Favorites offers={offer} />}
+          render={() => <Favorites offers={offers} />}
           authorizationStatus={AuthorizationStatus.Auth}
         >
         </PrivateRoute>
+        <Route path={AppRoute.Room} exact>
+          <Room offers={offers}/>
+        </Route>
         <Route>
           <NotFoundPage />
         </Route>

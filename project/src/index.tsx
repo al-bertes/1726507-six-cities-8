@@ -7,7 +7,7 @@ import { offer } from './mocks/offers';
 ReactDOM.render(
   <React.StrictMode>
     <App
-      offer={offer}
+      offers={offer}
     />
   </React.StrictMode>,
   document.getElementById('root'));
